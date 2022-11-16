@@ -1,0 +1,14 @@
+.inputfield {
+    /* border: 1px solid red; */
+}
+
+.inputfield label {
+    display: block;
+    color: #f2f2f2;
+    padding: 0.3rem 0;
+}
+
+.inputfield input {
+    height: var(--input-height);
+    width: 100%;
+}

@@ -37,11 +37,14 @@ export default function Home (){
             body: encode(
                 {
                 'form-name': form.getAttribute('name'),
-                ...state
+                ...user
                 }
             )
-        }).then(()=>alert("Wait a sec, your data is collected. Sharpview will reach back to you soon. Bye!!!"))
-        .then(()=>navigate(form.getAttribute('action')))
+        }).then(
+            ()=>alert("Wait a sec, your data is collected.")
+        ).then(
+            ()=>setLoggedIn(true)
+        )
         .catch(err=>alert(err))
     }
     return <div className="home-main">

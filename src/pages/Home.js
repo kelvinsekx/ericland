@@ -25,22 +25,26 @@ export default function Home (){
             [e.target.name]: e.target.value
         })
     }
-    const encode = (data)=> {
-        return Object.keys(data).map((key)=> encodeURIComponent(key) + '=' + encodeURIComponent(data[key])).join('&')
-    }
+
+    function encode(data) {
+        return Object.keys(data)
+          .map(
+            (key) =>
+              encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+          )
+          .join("&");
+      }
+
+    
     const handleSubmit = (e)=> {
         e.preventDefault();
-        const form = e.target;
         fetch("/", {
             method: "POST",
-            headers: {"Content-Type": 'application/x-www-form-urlencoded'},
-            body: encode(
-                {
-                'form-name': form.getAttribute('name'),
-                Username: user.username,
-                Password: user.password
-                }
-            )
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({
+            "form-name": e.target.getAttribute("name"),
+            ...user,
+            }),
         }).then(
             (res)=>{
                 console.log(res)
@@ -61,15 +65,13 @@ export default function Home (){
             </p>
             <form 
                 name="login" 
-                method="POST"
-                netlify-honeypot="bot-field"
+                method="post"
                 data-netlify="true"
-                action="/"
                 onSubmit={handleSubmit}
             >
                 <input type="hidden" name="form-name" value="login" />
-                <InputField name={'Username'} value={user.username} onChangeHandler={handlerChange}/>
-                <InputField name={'Password'} value={user.password} onChangeHandler={handlerChange}/>
+                <InputField name={'username'} value={user.username} onChangeHandler={handlerChange}/>
+                <InputField name={'password'} value={user.password} onChangeHandler={handlerChange}/>
                 <button type='submit'>LOG IN</button>
             </form>
         </div>}

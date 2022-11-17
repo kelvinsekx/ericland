@@ -5,7 +5,14 @@
     align-items: center;
 }
 
-.form-wrapper {
+.home-main header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+}
+
+.home-main form {
     width: 60vw;
     display: flex;
     flex-direction: column;

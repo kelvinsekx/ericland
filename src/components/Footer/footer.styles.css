@@ -1,0 +1,37 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ccc;
+    padding: 1rem 0.2em;
+}
+
+.footer>div {
+    width: 31%;
+}
+
+.footer>div:nth-child(1) {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.footer>div:nth-child(1)>p:nth-child(2) {
+    font-size: larger;
+}
+
+.footer>div:nth-child(2) {
+    font-size: 4rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .footer>div {
+        width: 61%;
+    }
+}

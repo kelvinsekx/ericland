@@ -4,7 +4,7 @@ export function InputField ({
     name, value, onChangeHandler
 }){
     return <div className="inputfield">
-    <label id={name}>{name}</label>
-    <input value={value} onChange={onChangeHandler} name={name}/>
+    <label htmlFor={name}>{name}</label>
+    <input name={name}/>
 </div>
 }

@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 
 import {BsFillShieldLockFill} from "react-icons/bs"
 
-import { useForm, ValidationError } from '@formspree/react';
+import { useForm} from '@formspree/react';
 
 
 export default function Home (){

@@ -1,4 +1,4 @@
-import { useForm, ValidationError } from '@formspree/react';
+import { useForm } from '@formspree/react';
 
 import {InputField} from '../InputField/InputField'
 

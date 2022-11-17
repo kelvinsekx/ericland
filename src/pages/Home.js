@@ -66,10 +66,10 @@ export default function Home (){
             <form 
                 name="loginForm" 
                 method="post"
-                netlify-honeypot="bot-field"
-                data-netlify="true"
-                action='/'
-                onSubmit={handleSubmit}
+                // netlify-honeypot="bot-field"
+                // data-netlify="true"
+                // action='/'
+                // onSubmit={handleSubmit}
             >
                 {/* <input type="hidden" name="form-name" value="loginForm" /> */}
                 <InputField name={'username'} value={user.username} onChangeHandler={handlerChange}/>

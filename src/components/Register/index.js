@@ -3,10 +3,7 @@ import "./register.styles.css"
 
 import {InputField} from '../InputField/InputField'
 
-const styles = {
-    efcYellow: '#ED8B00',
-    fontMedium: "1.5rem"
-}
+
 export default function Register (){
     const [state, handleSubmit] = useForm("mgeqdqko");
     if (state.succeeded) {

@@ -18,7 +18,7 @@ export default function Register (){
                 onSubmit={handleSubmit}
             >
                 <InputField name={'Last Name'} />
-                <InputField name={'Member Email Address'} />
+                <InputField name={'Member Email Address'} type="email" />
                 <InputField name={'Phone Number'} />
                 <button  type="submit" disabled={state.submitting}>Continue</button>
             </form>

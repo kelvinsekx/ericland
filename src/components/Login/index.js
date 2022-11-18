@@ -16,7 +16,7 @@ export default function Login ({
                 onSubmit={handleSubmit}
             >
                 <InputField name={'username'} />
-                <InputField name={'password'} type={'password'} minLength={6}/>
+                <InputField name={'password'} type={'password'} minLength={3}/>
                 <button  type="submit" disabled={state.submitting}>LOG IN</button>
             </form>
         </div>

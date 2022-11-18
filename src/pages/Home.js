@@ -15,6 +15,9 @@ export default function Home (){
     
     return <div className="home-main"> 
         <div className='form-wrapper'>
+            <div className='logo'>
+                <img src={'https://www.efcufinancial.org/images/logo-mobile.png'} alt="logo" />
+            </div>
             <header><BsFillShieldLockFill/> Online Banking</header>
             {
                 state.succeeded ? 

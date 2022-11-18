@@ -9,3 +9,14 @@
     color: var(--efc-yellow);
     font-size: larger;
 }
+
+@media screen and (max-width: 1000px) {
+    .login {
+        padding: 2rem 0;
+    }
+
+    .login form {
+        padding: 2rem 0;
+        align-self: center;
+    }
+}

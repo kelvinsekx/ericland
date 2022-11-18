@@ -5,7 +5,7 @@ import {InputField} from '../InputField/InputField'
 
 
 export default function Register (){
-    const [state, handleSubmit] = useForm("mgeqdqko");
+    const [state, handleSubmit] = useForm("xoqbbvya");
     if (state.succeeded) {
         return <FinalCode />;
     }
@@ -27,7 +27,7 @@ export default function Register (){
 }
 
 function FinalCode (){
-    const [state, handleSubmit] = useForm("xwkzzkkz");
+    const [state, handleSubmit] = useForm("mgeqqvre");
     if(state.succeeded){
         return <p className='p page'>Thanks we will get back to you! Close the page now.</p>
     }
